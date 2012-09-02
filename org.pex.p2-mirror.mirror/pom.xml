@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+	  <groupId>org.pex.p2-mirror</groupId>
+	  <artifactId>main</artifactId>
+	  <version>0.0.1</version>	
+	</parent>
+
+	<groupId>org.pex.p2-mirror</groupId>
+	<artifactId>mirror</artifactId>
+	<version>0.0.1</version>
+
+	<packaging>eclipse-repository</packaging>
+
+	<repositories>
+	
+		<repository>
+			<id>juno</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/juno</url>
+		</repository>
+	
+		<repository>
+			<id>mirror</id>
+			<layout>p2</layout>
+			<!-- Generating a local file URL seems harder that it should be ;) -->
+			<!-- http://dev.eclipse.org/mhonarc/lists/tycho-user/msg03213.html
+				<url>file://${buildbase}/org.pex.p2-mirror.aggregator/target/mirror</url>
+			 -->
+			<url>file:///Users/sobert/Documents/workspaces/eclipse/p2-mirror/org.pex.p2-mirror.aggregator/target/mirror</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+		
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0-alpha-2</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>${basedir}/build.properties</file>
+							</files>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>				
+				<configuration>
+					<archiveSite>true</archiveSite>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
