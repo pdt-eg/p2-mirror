@@ -23,4 +23,4 @@ If you want to add your updatesite to the mirror follow these steps:
 1. Clone this repository
 2. Run `mvn clean install`
 3. Run `mvn clean install -P packageRepo` (the 2nd step is necessary due to a bug in tycho)
-4. This will result in a workint p2 repository in `org.pex.p2-mirror.mirror/target/repository`
+4. This will result in a working p2 repository in `org.pex.p2-mirror.mirror/target/repository`
