@@ -40,9 +40,10 @@
 			<layout>p2</layout>
 		</repository>
 
+		<!-- coffeescript editor dependency -->
 		<repository>
 			<id>p2-nightly</id>
-			<url>http://pulse00.github.com/p2-nightly/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
 			<layout>p2</layout>
 		</repository>
 

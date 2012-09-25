@@ -124,6 +124,22 @@
 							<url>http://eclipse.piece-framework.com</url>
 							<layout>p2</layout>
 						</repository>
+
+
+						<!-- NOT YET CHECKED FOR AGREEMENT -->
+						<!-- coffeescript editor -->
+						<repository>
+							<url>http://coffeescript-editor.eclipselabs.org.codespot.com/hg/</url>
+							<layout>p2</layout>
+						</repository>
+
+
+						<!-- NOT YET CHECKED FOR AGREEMENT -->
+						<!-- logviewer -->
+						<repository>
+							<url>http://logviewer.eclipselabs.org.codespot.com/git/de.anbos.eclipse.logviewer.update/</url>
+							<layout>p2</layout>
+						</repository>
 						
 					</source>
 

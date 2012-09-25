@@ -96,19 +96,28 @@
    <feature url="features/org.phpsrc.eclipse.pti.library.pear.jar" id="org.phpsrc.eclipse.pti.library.pear" version="0.0.0">
       <category name="libraries"/>
    </feature>
+
+   <feature url="features/csep.feature.jar" id="csep.feature" version="0.0.0">
+      <category name="editors"/>
+   </feature>
+
+   <feature url="features/de.anbos.eclipse.logviewer.feature.jar" id="de.anbos.eclipse.logviewer.feature" version="0.0.0">
+      <category name="misc"/>
+   </feature>
    
    <category-def name="frameworks" label="Frameworks / Content Management">
       <description>
          Support for various frameworks and CMS
       </description>
    </category-def>
-   <category-def name="editors" label="Text Editors">
+   <category-def name="editors" label="Text Editors / Productivity tools">
       <description>
-         Various text editors
+         Various text editors and productivity tools
       </description>
    </category-def>
    <category-def name="pexcore" label="PDT Core Extensions"/>
    <category-def name="libraries" label="Libraries"/>
+   <category-def name="misc" label="Miscellaneous"/>
    <category-def name="toolchains" label="Toolchains">
       <description>
          Everything related to Depencendy Management/Packaging/Deployment
@@ -116,7 +125,7 @@
    </category-def>
    <category-def name="tools" label="Tools">
       <description>
-         Various tools supporting Unit-Testing and Qualityassurance
+         Various tools supporting Testing and Qualityassurance
       </description>
    </category-def>
    <category-def name="ecommerce" label="Ecommerce">
