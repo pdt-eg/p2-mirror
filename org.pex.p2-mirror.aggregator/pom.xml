@@ -68,11 +68,26 @@
 							<url>http://p2.dubture.com/</url>
 							<layout>p2</layout>
 						</repository>
+
+						<!-- Zen Coding-->
+						<!-- https://github.com/emmetio/emmet-eclipse -->
+						<repository>
+							<url>http://emmet.io/eclipse/updates/</url>
+							<layout>p2</layout>
+						</repository>
 						
 						<repository>
 							<url>http://yiiclipse.maziarz.org/updatesite/STABLE/</url>
 							<layout>p2</layout>
 						</repository>
+
+						<!-- NOT YET CHECKED FOR AGREEMENT -->
+						<!-- seems unmaintaned -->
+						<repository>
+							<url>http://logviewer.eclipselabs.org.codespot.com/git/de.anbos.eclipse.logviewer.update/</url>
+							<layout>p2</layout>
+						</repository>
+						
 						
 						<!-- NOT YET CHECKED FOR AGREEMENT -->
 						<!-- seems unmaintaned, upgraded to juno and created a fork on github: https://github.com/pulse00/apdt -->

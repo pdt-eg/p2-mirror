@@ -9,6 +9,10 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>../PEX-Core</module>
+		<!--TODO: the build fails for some reason due to the missing org.getcomposer bundle, which should be available on p2.dubture.com.... -->
+		<module>../Composer-Eclipse-Plugin</module>
+		<module>org.pex.p2-mirror.repo</module>
 		<module>org.pex.p2-mirror.aggregator</module>
 	</modules>
 
@@ -23,6 +27,15 @@
 			</modules>
 		</profile>
 	</profiles>
+
+	<repositories>
+		<repository>
+			<id>juno</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/juno</url>
+		</repository>
+	</repositories>
+
 
 	<scm>
 		<url>https://github.com/pulse00/p2-mirror</url>
