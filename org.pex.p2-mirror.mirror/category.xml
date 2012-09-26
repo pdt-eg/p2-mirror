@@ -1,107 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
 
-   <feature url="features/org.pex.feature.jar" id="org.pex.feature" version="0.0.0">
+   <feature id="org.pex.feature" version="0.0.0">
       <category name="pexcore"/>
    </feature>
 
-   <feature url="features/com.dubture.pdt.feature.jar" id="com.dubture.pdt.feature" version="0.0.0">
+   <feature id="com.dubture.pdt.feature" version="0.0.0">
       <category name="pexcore"/>
    </feature>
    
-   <feature url="features/com.dubture.indexing.feature.jar" id="com.dubture.indexing.feature" version="0.0.0">
+   <feature id="com.dubture.indexing.feature" version="0.0.0">
       <category name="pexcore"/>
    </feature>
    
-   <feature url="features/com.dubture.doctrine.feature.jar" id="com.dubture.doctrine.feature" version="0.0.0">
+   <feature id="com.dubture.doctrine.feature" version="0.0.0">
       <category name="libraries"/>
    </feature>
    
-   <feature url="features/com.dubture.symfony.feature.jar" id="com.dubture.symfony.feature" version="0.0.0">
+   <feature id="com.dubture.symfony.feature" version="0.0.0">
       <category name="frameworks"/>
    </feature>
    
-   <feature url="features/com.dubture.twig.feature.jar" id="com.dubture.twig.feature" version="0.0.0">
+   <feature id="com.dubture.twig.feature" version="0.0.0">
       <category name="editors"/>
    </feature>
    
-   <feature url="features/org.eclipse.php.smarty_feature.jar" id="org.eclipse.php.smarty_feature" version="0.0.0">
+   <feature id="org.eclipse.php.smarty_feature" version="0.0.0">
       <category name="editors"/>
    </feature>
    
-   <feature url="features/org.dadacoalition.yedit.feature.jar" id="org.dadacoalition.yedit.feature" version="0.0.0">
+   <feature id="org.dadacoalition.yedit.feature" version="0.0.0">
       <category name="editors"/>
    </feature>
    
-   <feature url="features/org.sourceforge.jsonedit.feature.jar" id="org.sourceforge.jsonedit.feature" version="0.0.0">
+   <feature id="org.sourceforge.jsonedit.feature" version="0.0.0">
       <category name="editors"/>
    </feature>
 
-   <feature url="features/io.emmet.eclipse.jar" id="io.emmet.eclipse" version="0.0.0">
+   <feature id="io.emmet.eclipse" version="0.0.0">
       <category name="editors"/>
    </feature>   
    
-   <feature url="features/org.ganoro.phing.feature.jar" id="org.ganoro.phing.feature" version="0.0.0">
+   <feature id="org.ganoro.phing.feature" version="0.0.0">
       <category name="toolchains"/>
    </feature>
    
-   <feature url="features/com.dubture.composer.feature.jar" id="com.dubture.composer.feature" version="0.0.0">
+   <feature id="com.dubture.composer.feature" version="0.0.0">
       <category name="toolchains"/>
    </feature>
    
-   <feature url="features/org.eclipse.magento.jar" id="org.eclipse.magento" version="0.0.0">
+   <feature id="org.eclipse.magento" version="0.0.0">
       <category name="ecommerce"/>
    </feature>
    
-   <feature url="features/org.maziarz.yiiclipse.feature.jar" id="org.maziarz.yiiclipse.feature" version="0.0.0">
+   <feature id="org.maziarz.yiiclipse.feature" version="0.0.0">
       <category name="frameworks"/>
    </feature>
    
-   <feature url="features/Drupal_for_Eclipse_PDT.jar" id="Drupal_for_Eclipse_PDT" version="0.0.0">
+   <feature id="Drupal_for_Eclipse_PDT" version="0.0.0">
       <category name="frameworks"/>
    </feature>
    
-   <feature url="features/org.phpmaven.eclipse.feature.jar" id="org.phpmaven.eclipse.feature" version="0.0.0">
+   <feature id="org.phpmaven.eclipse.feature" version="0.0.0">
       <category name="toolchains"/>
    </feature>
    
-   <feature url="features/org.phpaspect.apdt.feature.jar" id="org.phpaspect.apdt.feature" version="0.0.0">
+   <feature id="org.phpaspect.apdt.feature" version="0.0.0">
       <category name="tools"/>
    </feature>
    
-   <feature url="features/org.phpsrc.eclipse.pti.core.jar" id="org.phpsrc.eclipse.pti.core" version="0.0.0">
+   <feature id="org.phpsrc.eclipse.pti.core" version="0.0.0">
       <category name="tools"/>
    </feature>
    
-   <feature url="features/org.phpsrc.eclipse.pti.tools.codesniffer.jar" id="org.phpsrc.eclipse.pti.tools.codesniffer" version="0.0.0">
+   <feature id="org.phpsrc.eclipse.pti.tools.codesniffer" version="0.0.0">
       <category name="tools"/>
    </feature>
    
-   <feature url="features/org.phpsrc.eclipse.pti.tools.phpcpd.jar" id="org.phpsrc.eclipse.pti.tools.phpcpd" version="0.0.0">
+   <feature id="org.phpsrc.eclipse.pti.tools.phpcpd" version="0.0.0">
       <category name="tools"/>
    </feature>
    
-   <feature url="features/org.phpsrc.eclipse.pti.tools.phpmd.jar" id="org.phpsrc.eclipse.pti.tools.phpmd" version="0.0.0">
+   <feature id="org.phpsrc.eclipse.pti.tools.phpmd" version="0.0.0">
       <category name="tools"/>
    </feature>
    
-   <feature url="features/org.phpsrc.eclipse.pti.tools.phpunit.jar" id="org.phpsrc.eclipse.pti.tools.phpunit" version="0.0.0">
+   <feature id="org.phpsrc.eclipse.pti.tools.phpunit" version="0.0.0">
       <category name="tools"/>
    </feature>
    
-   <feature url="features/com.piece_framework.makegood_feature.jar" id="com.piece_framework.makegood_feature" version="0.0.0">
+   <feature id="com.piece_framework.makegood_feature" version="0.0.0">
       <category name="tools"/>
    </feature>
    
-   <feature url="features/org.phpsrc.eclipse.pti.library.pear.jar" id="org.phpsrc.eclipse.pti.library.pear" version="0.0.0">
+   <feature id="org.phpsrc.eclipse.pti.library.pear" version="0.0.0">
       <category name="libraries"/>
    </feature>
 
-   <feature url="features/csep.feature.jar" id="csep.feature" version="0.0.0">
+   <feature id="csep.feature" version="0.0.0">
       <category name="editors"/>
    </feature>
 
-   <feature url="features/de.anbos.eclipse.logviewer.feature.jar" id="de.anbos.eclipse.logviewer.feature" version="0.0.0">
+   <feature id="de.anbos.eclipse.logviewer.feature" version="0.0.0">
       <category name="misc"/>
    </feature>
    
