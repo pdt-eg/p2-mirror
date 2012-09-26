@@ -30,24 +30,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.6</version>
-				<configuration>
-					<message>Creating site for ${project.version}</message>
-					<outputDirectory>target/repository</outputDirectory>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site</phase>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
 				<groupId>org.eclipse.tycho.extras</groupId>
 				<artifactId>tycho-p2-extras-plugin</artifactId>
 				<version>${tycho-version}</version>

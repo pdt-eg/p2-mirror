@@ -6,7 +6,7 @@ all your PDT needs.
 
 ### The current URL:
 
-[http://pdt-eg.github.com/p2-mirror](http://pdt-eg.github.com/p2-mirror)
+[http://p2.pdt-extensions.org/](http://p2.pdt-extensions.org/)
 
 ### Contributing your updatesite
 
