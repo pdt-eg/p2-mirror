@@ -27,11 +27,7 @@
 		<repository>
 			<id>mirror</id>
 			<layout>p2</layout>
-			<!-- Generating a local file URL seems harder that it should be ;) -->
-			<!-- http://dev.eclipse.org/mhonarc/lists/tycho-user/msg03213.html
-				<url>file://${buildbase}/org.pex.p2-mirror.aggregator/target/mirror</url>
-			 -->
-			<url>file:///Users/sobert/Documents/workspaces/eclipse/p2-mirror/org.pex.p2-mirror.aggregator/target/mirror</url>
+			<url>${project.baseUri}../org.pex.p2-mirror.aggregator/target/mirror</url>
 		</repository>
 
 		<repository>
@@ -47,12 +43,42 @@
 			<layout>p2</layout>
 		</repository>
 
+		<!-- eclipse color themes dependency -->
+		<repository>
+			<id>color-theme</id>
+			<url>http://eclipse-color-theme.github.com/update/</url>
+			<layout>p2</layout>
+		</repository>			
+
 
 	</repositories>
 
 	<build>
 		<plugins>
 		
+	      <plugin>
+	        <artifactId>maven-resources-plugin</artifactId>
+	        <version>2.5</version>
+	        <executions>
+	          <execution>
+	            <id>copy-resources</id>
+	            <phase>package</phase>
+	            <goals>
+	              <goal>copy-resources</goal>
+	            </goals>
+	            <configuration>
+				  <overwrite>true</overwrite>
+	              <outputDirectory>${outputdir}</outputDirectory>
+	              <resources>
+	                <resource>
+	                  <directory>target/repository</directory>	                  
+	                </resource>
+	              </resources>
+	            </configuration>
+	          </execution>
+	        </executions>
+	      </plugin>
+
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>

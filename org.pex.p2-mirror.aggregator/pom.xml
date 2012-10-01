@@ -16,11 +16,6 @@
 
 	<repositories>
 		<repository>
-			<id>indigo</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/indigo</url>
-		</repository>
-		<repository>
 			<id>juno</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/juno</url>
@@ -43,11 +38,13 @@
 				</executions>
 				<configuration>
 				
-					<!-- source repositories to mirror from -->
-					
+					<!-- source repositories to mirror from -->					
 					<source>
+					
+						<!-- Symfony, Twig, Composer, Doctrine etc -->					
+						<!-- dev build -->
 						<repository>
-							<url>http://p2.dubture.com/</url>
+							<url>http://pulse00.github.com/p2-nightly/</url>
 							<layout>p2</layout>
 						</repository>
 
@@ -58,6 +55,7 @@
 							<layout>p2</layout>
 						</repository>
 						
+						<!-- Yii -->
 						<repository>
 							<url>http://yiiclipse.maziarz.org/updatesite/STABLE/</url>
 							<layout>p2</layout>
@@ -78,6 +76,7 @@
 							<layout>p2</layout>
 						</repository>
 						
+						<!-- PTI -->
 						<repository>
 							<url>http://www.phpsrc.org/eclipse/pti/</url>
 							<layout>p2</layout>
@@ -96,6 +95,7 @@
 							<layout>p2</layout>
 						</repository>
 						
+						<!-- php-maven -->
 						<repository>
 							<url>http://www.php-maven.org/eclipse/update</url>
 							<layout>p2</layout>
@@ -122,6 +122,22 @@
 							<url>http://logviewer.eclipselabs.org.codespot.com/git/de.anbos.eclipse.logviewer.update/</url>
 							<layout>p2</layout>
 						</repository>
+
+						<!-- NOT YET CHECKED FOR AGREEMENT -->
+						<!-- jquery -->
+						<repository>
+							<url>http://svn.codespot.com/a/eclipselabs.org/jsdt-jquery/updatesite</url>
+							<layout>p2</layout>
+						</repository>			
+
+
+						<!-- NOT YET CHECKED FOR AGREEMENT -->
+						<!-- eclipse color themes -->
+						<repository>
+							<url>http://eclipse-color-theme.github.com/update/</url>
+							<layout>p2</layout>
+						</repository>			
+						
 						
 					</source>
 

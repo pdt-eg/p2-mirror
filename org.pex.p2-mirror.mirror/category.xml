@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
 
-   <feature id="org.pex.feature" version="0.0.0">
+   <feature id="org.pdtextensions.feature" version="0.0.0">
       <category name="pexcore"/>
    </feature>
-
-   <feature id="com.dubture.pdt.feature" version="0.0.0">
-      <category name="pexcore"/>
-   </feature>
-   
+      
    <feature id="com.dubture.indexing.feature" version="0.0.0">
-      <category name="pexcore"/>
+      <category name="misc"/>
    </feature>
    
    <feature id="com.dubture.doctrine.feature" version="0.0.0">
@@ -30,6 +26,10 @@
    </feature>
    
    <feature id="org.dadacoalition.yedit.feature" version="0.0.0">
+      <category name="editors"/>
+   </feature>
+
+   <feature id="org.eclipselabs.jsdt.jquery_feature" version="0.0.0">
       <category name="editors"/>
    </feature>
    
@@ -104,7 +104,12 @@
    <feature id="de.anbos.eclipse.logviewer.feature" version="0.0.0">
       <category name="misc"/>
    </feature>
-   
+
+   <feature id="com.github.eclipsecolortheme.feature" version="0.0.0">
+      <category name="editors"/>
+   </feature>
+
+
    <category-def name="frameworks" label="Frameworks / Content Management">
       <description>
          Support for various frameworks and CMS
@@ -115,7 +120,7 @@
          Various text editors and productivity tools
       </description>
    </category-def>
-   <category-def name="pexcore" label="PDT Core Extensions"/>
+   <category-def name="pexcore" label="PDT Extensions"/>
    <category-def name="libraries" label="Libraries"/>
    <category-def name="misc" label="Miscellaneous"/>
    <category-def name="toolchains" label="Toolchains">

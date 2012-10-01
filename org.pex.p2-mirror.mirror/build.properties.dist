@@ -1,1 +1,1 @@
-buildbase=outputdir=/path/to/local/generated/p2-mirror
+outputdir=/path/to/p2-mirror-repo

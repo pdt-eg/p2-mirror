@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.pdtextensions.feature_0.0.12.qualifier.jar" id="org.pdtextensions.feature" version="0.0.12.qualifier">
+   <feature id="org.pdtextensions.feature" version="0.0.0">
       <category name="PEX"/>
    </feature>
   <category-def name="PEX" label="PDT Extension Group">
