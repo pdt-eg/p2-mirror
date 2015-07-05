@@ -1,62 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
-
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>org.pex.p2-mirror</groupId>
-	<artifactId>main</artifactId>
-	<version>0.0.1</version>
+	<artifactId>release</artifactId>
+	<version>0.0.3</version>
 	<packaging>pom</packaging>
-
-	<modules>
-		<module>../PEX-Core</module>
-		<!--TODO: the build fails for some reason due to the missing org.getcomposer bundle, which should be available on p2.dubture.com.... -->
-		<module>../Composer-Eclipse-Plugin</module>
-		<module>org.pex.p2-mirror.repo</module>
-		<module>org.pex.p2-mirror.aggregator</module>
-	</modules>
-
-	<!-- Currently the build needs 2 passed due to https://bugs.eclipse.org/bugs/show_bug.cgi?id=353889 -->
-	<!-- Otherwise the first build will fail due to the non-existent aggregated 
-		local repository -->
-	<profiles>
-		<profile>
-			<id>packageRepo</id>
-			<modules>
-				<module>org.pex.p2-mirror.mirror</module>
-			</modules>
-		</profile>
-	</profiles>
-
+	<properties>
+		<tycho-version>0.22.0</tycho-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<eclipse.name>luna</eclipse.name>
+	</properties>
 	<repositories>
 		<repository>
-			<id>juno</id>
+			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/juno</url>
+			<url>http://download.eclipse.org/releases/${eclipse.name}</url>
 		</repository>
 	</repositories>
-
-
-	<scm>
-		<url>https://github.com/pulse00/p2-mirror</url>
-		<connection>scm:git:git@github.com:pulse00/p2-mirror.git</connection>
-		<developerConnection>scm:git:git@github.com:pulse00/p2-mirror.git</developerConnection>
-	</scm>
-
-	<developers>
-		<developer>
-			<email>r.gruendler@gmail.com</email>
-			<name>Robert Gründler</name>
-			<url>https://github.com/pulse00</url>
-			<id>pulse00</id>
-		</developer>
-	</developers>
-
-	<properties>
-		<tycho-version>0.15.0</tycho-version>
-		<github.global.server>github</github.global.server>
-	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -64,6 +26,106 @@
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.14</version>
+				<configuration>
+					<argLine>-Xmx1024m</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-eclipserun-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<appArgLine>-application org.eclipse.b3.cli.headless aggregate --buildModel ${project.basedir}/mirror.b3aggr</appArgLine>
+					<argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
+					<dependencies>
+						<dependency>
+							<artifactId>org.eclipse.b3.aggregator.engine.feature</artifactId>
+							<type>eclipse-feature</type>
+						</dependency>
+					</dependencies>
+					<repositories>
+						<repository>
+							<id>b3-headless</id>
+							<layout>p2</layout>
+							<url>http://download.eclipse.org/modeling/emft/b3/headless-4.4/</url>
+						</repository>
+						<repository>
+							<id>b3</id>
+							<layout>p2</layout>
+							<url>http://download.eclipse.org/modeling/emft/b3/updates-4.4/</url>
+						</repository>
+						<repository>
+							<id>eclipse</id>
+							<layout>p2</layout>
+							<url>http://download.eclipse.org/releases/${eclipse.name}/</url>
+						</repository>
+					</repositories>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>eclipse-run</goal>
+						</goals>
+						<phase>compile</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- clean the repo otherwise the old .jars pile up -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${project.basedir}/mirror/final</directory>
+						</fileset>
+					</filesets>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
