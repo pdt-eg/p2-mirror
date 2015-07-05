@@ -34,10 +34,10 @@
     <validationRepositories location="http://download.eclipse.org/releases/luna"/>
     <validationRepositories location="http://download.eclipse.org/releases/kepler"/>
     <validationRepositories location="http://download.eclipse.org/releases/juno"/>
-    <validationRepositories location="http://download.eclipse.org/technology/dltk/updates-dev/latest-nightly/"/>
+    <validationRepositories location="http://download.eclipse.org/technology/dltk/updates-dev/latest/"/>
     <validationRepositories location="http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository/"/>
     <validationRepositories location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
-    <validationRepositories location="http://download.eclipse.org/tools/pdt/updates/latest-nightly/"/>
+    <validationRepositories location="http://download.eclipse.org/tools/pdt/updates/latest/"/>
   </validationSets>
   <configurations operatingSystem="linux" windowSystem="gtk"/>
   <configurations operatingSystem="linux" windowSystem="gtk" architecture="x86_64"/>
