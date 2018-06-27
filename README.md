@@ -15,8 +15,8 @@ all your PDT needs.
 If you want to add your updatesite to the mirror follow these steps:
 
 1. Fork the repo
-2. Copy _empty.b3aggrcon and fill with new repository
-3. Add contributions tag to mirror.b3aggr
+2. Copy _empty.aggrcon and fill with new repository
+3. Add contributions tag to mirror.aggr
 3. Add your feature via [b3 editor](https://wiki.eclipse.org/Eclipse_b3/aggregator/manual)
 4. Send us a pull request
 
