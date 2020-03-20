@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aggregator:Contribution xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:aggregator="http://www.eclipse.org/cbi/p2repo/2011/aggregator/1.1.0" label="VRapper">
-  <repositories location="http://vrapper.sourceforge.net/update-site/unstable" description="VRapper">
+<aggregator:Contribution xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:aggregator="http://www.eclipse.org/cbi/p2repo/2011/aggregator/1.1.0" label="VRapper" enabled="false">
+  <!--http://vrapper.sourceforge.net/update-site/stable-->
+  <repositories location="http://vrapper.sourceforge.net/update-site/stable/" description="VRapper">
     <features name="net.sourceforge.vrapper.feature.group">
       <categories href="mirror.aggr#//@customCategories[identifier='text_editors']"/>
     </features>

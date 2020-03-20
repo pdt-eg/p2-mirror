@@ -4,19 +4,19 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.pex.p2-mirror</groupId>
-	<artifactId>release</artifactId>
+	<artifactId>nightly</artifactId>
 	<version>0.0.5</version>
 	<packaging>pom</packaging>
 	<properties>
-		<tycho-version>1.2.0</tycho-version>
+		<tycho-version>1.6.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<eclipse.name>photon</eclipse.name>
+		<eclipse.name>2020-03</eclipse.name>
 	</properties>
 	<repositories>
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/${eclipse.name}</url>
+			<url>https://download.eclipse.org/releases/${eclipse.name}</url>
 		</repository>
 	</repositories>
 	<build>
@@ -40,19 +40,9 @@
 							<arch>x86_64</arch>
 						</environment>
 						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
 							<os>macosx</os>
 							<ws>cocoa</ws>
 							<arch>x86_64</arch>
-						</environment>
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86</arch>
 						</environment>
 						<environment>
 							<os>win32</os>
@@ -67,7 +57,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.14</version>
 				<configuration>
-					<argLine>-Xmx512m</argLine>
+					<argLine>-Xmx1024m</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -75,6 +65,7 @@
 				<artifactId>tycho-eclipserun-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
+					<argLine>-Dorg.eclipse.ecf.provider.filetransfer.excludeContributors=org.eclipse.ecf.provider.filetransfer.httpclient4</argLine>
 					<applicationsArgs>
     					<arg>-application</arg>
     					<applicationsArg>org.eclipse.cbi.p2repo.cli.headless</applicationsArg>
@@ -90,9 +81,10 @@
 						<applicationsArg>--action</applicationsArg>
 						<applicationsArg>CLEAN_BUILD</applicationsArg>
 					</applicationsArgs>
+					<executionEnvironment>JavaSE-1.8</executionEnvironment>
 					<jvmArgs>
-						<jvmArg>-Xms64M</jvmArg>
-						<jvmArg>-Xmx512M</jvmArg>
+						<jvmArg>-Xms128M</jvmArg>
+						<jvmArg>-Xmx1024M</jvmArg>
 					</jvmArgs>
 					<dependencies>
 						<dependency>
@@ -107,17 +99,21 @@
 							<artifactId>org.eclipse.equinox.core.feature</artifactId>
 							<type>eclipse-feature</type>
 						</dependency>
+                                                <dependency>
+                                                        <artifactId>org.eclipse.core.net</artifactId>
+                                                        <type>eclipse-plugin</type>
+                                                </dependency>
 					</dependencies>
 					<repositories>
 						<repository>
 							<id>b3-headless</id>
 							<layout>p2</layout>
-							<url>http://download.eclipse.org/cbi/updates/aggregator/headless/4.7/</url>
+							<url>https://download.eclipse.org/cbi/updates/aggregator/headless/4.13</url>
 						</repository>
 						<repository>
 							<id>eclipse</id>
 							<layout>p2</layout>
-							<url>http://download.eclipse.org/releases/${eclipse.name}/</url>
+							<url>https://download.eclipse.org/releases/${eclipse.name}/</url>
 						</repository>
 					</repositories>
 				</configuration>
@@ -129,18 +125,6 @@
 						<phase>compile</phase>
 					</execution>
 				</executions>
-			</plugin>
-			<!-- clean the repo otherwise the old .jars pile up -->
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.4.1</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>${project.basedir}/mirror/final</directory>
-						</fileset>
-					</filesets>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

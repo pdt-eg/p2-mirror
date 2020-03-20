@@ -8,7 +8,7 @@
       <categories href="mirror.aggr#//@customCategories[identifier='toolchains']"/>
     </features>
   </repositories>
-  <repositories location="http://pdt-eg.github.io/Core-Plugin/latest" description="Core-Plugin">
+  <repositories location="http://pdt-eg.github.io/Core-Plugin/nightly" description="Core-Plugin">
     <features name="org.pdtextensions.feature.feature.group">
       <categories href="mirror.aggr#//@customCategories[identifier='pdt_extensions']"/>
     </features>
